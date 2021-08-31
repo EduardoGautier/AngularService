@@ -1,0 +1,10 @@
+<h2>Todos Os Posts De Um Usuario</h2>
+<input type="number" [(ngModel)] = "userId">
+<button (click)= "getPosts()">Buscar Usuario</button>
+<ul>
+<li *ngFor = "let post of posts$ | async" >
+  <span>{{post.id}} - {{post.title | uppercase}}</span>
+</li>
+</ul>
+
+
