@@ -23,4 +23,9 @@ export class PostsService {
       catchError(tratadorDeErro<Post[]>([]))
     );
   }
+  buscarPostPorTitle(title:string):Observable<Post[]>{
+    return this.http.get<Post[]>(`${this.urlBase}/?title=${title}`).pipe(
+      catchError(tratadorDeErro<Post[]>([]))
+    );
+  }
 }
